@@ -1,0 +1,69 @@
+\documentclass[UTF8]{ctexbook}
+
+\title{A Try}
+\author{Alice}
+\date{\today}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\frontmatter
+
+\begin{center}
+\Large{perface}
+\end{center}
+
+\begin{center}
+解题是一门艺术\\定理、技巧方法（tricks）是珠子，解题能力关键在于怎么串\\tricks易习，珠子难串
+\end{center}
+我将尽量已逻辑顺序为序，尽可能选高考题，多一些hints，多一些remarks。答案一般就不给了\\希望学弟君对每个trick都反复琢磨，这个trick可以用在哪？哪不可以用？核心是什么？是否可以改进？是否和别的trick有联系？$\cdots$（请务必先独立思考）\\LaTeX还没很会，可能排版不好看，见笑了
+
+
+\mainmatter
+
+\chapter{集合、映射与计数}
+
+
+以下内容将默认你会德摩根律（de Morgan对偶原理）以及一些基础常见的计数模型（枚举、加法乘法原理、基本的排列组合数的应用、分组分配问题）
+
+\section{伯努利装错信封问题}
+
+\subsection{准备工作}
+\subsubsection{容斥原理}
+
+设$A_{1}$,$A_{2}$,$\cdots$ ,$A_{n}$为有限集合，用$\lvert A_{i}\rvert$ 表示集合$A_{i}$ 中的元素个数，那么
+\begin{equation}
+\lvert A_{1}\cup A_{2}\cup \cdots \cup A_{n}\rvert =\sum\limits_{i=1}^{n} \lvert A_{i}\rvert -\sum\limits_{1\leq i<j\leq n}\lvert A_{i}\cap A_{j}\rvert +\cdots +(-1)^{n-1}\lvert A_{1}\cap A_{2}\cap\cdots\cap A_{n}\rvert
+\end{equation}•
+
+尝试证明一下这个结论吧$0\omega 0$
+\\Hint:Try to count how many times an arbitrary element in left side appears in the other side.Moreover, is there any elements existing just in the right side?
+\\Remark:想想如何形象地理解这个定理吧0.0
+
+\subsubsection{逐步淘汰原理（筛法公式）}
+
+设S是有限集合，$A_{i}\subseteqq S(i=1,2,\cdots ,n)$,$A_{i}$在S中的补集为$\complement_{S}A_{i}(i=1,2,\cdots ,n)$则
+\begin{equation}
+\lvert\complement_{S}A_{1}\cap\complement_{S}A_{2}\cap\cdots\cap\complement_{S}A_{n}\rvert =\lvert S\rvert-\sum\limits_{i=1}^{n}\lvert A_{i}\rvert +\cdots +(-1)^{n}\lvert A_{1}\cap A_{2}\cap\cdots \cap A_{n}\rvert
+\end{equation}•
+
+同样尝试证明一下这个结论吧$0\omega 0$
+\\Hint:Try to use $(1)$ and de Morgan's laws to achieve a brief proof.
+\\Remark:想想为什么$1.2$叫这个名字\\以及$1.1$与$1.2$有什么共同之处吗？
+
+\subsection{伯努利装错信封问题}
+
+有$n$封不同的信和$n$个配套的信封写有收信人地址的信封，现将$n$封信一对一地套入到$n$个信封中去，结果发现没有一封套对，问有多少种不同的套法？
+\\Hint:From finitude to infinitude.From special to generic.From easy to difficult.
+
+\section{隔板法}
+
+证明：不定方程$x_{1}+x_{2}+\cdots +x_{m}=n(m,n\in\mathbb{N_{+}})$的非负整数解$(x_{1},x_{2},\cdots ,x_{m})$的个数为$C^{m-1}_{n+m-1}$
+\\Remark:如果非负整数换作正整数呢？如果对不同的x有不同的范围要求呢？
+
+
+\end{document}
